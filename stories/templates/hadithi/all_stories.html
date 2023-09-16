@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   <!-- Favicons -->
 
   <link href="{% static 'assets/img/cooltext.png' %}" rel="icon">
@@ -25,6 +25,7 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
   {% endblock %}
+
 </head>
 <body>
 
@@ -38,9 +39,10 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{% url 'home'%}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'sports_view'%}">Sports</a></li>
           <li><a class="nav-link scrollto" href="{% url 'story_list' %}">Stories</a></li>
           <li><a class="nav-link scrollto" href="{% url 'poem_list' %}">Poems</a></li>
-          <li><a class="nav-link scrollto" href="#cont">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="#cont">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -57,21 +59,20 @@
           <div class="col-lg-6 content order-lg-1 order-2">
             <h2 class="title">Few Words from the author</h2>
             <p>
-             About yourself just a small paragrapgh prefferably 2 or 3 lines.
-             About yourself just a small paragrapgh prefferably 2 or 3 lines.
-             About yourself just a small paragrapgh prefferably 2 or 3 lines.
+              My name is Lofty. I'm a stories enthusiast. I love reading books, especially books by African authors but most importantly I write Short stories too, sprinkled with some humor that will put a smile on your face. You have a bad day? Reach out to Lofty and catch some funny stories. Mostly, I write about my daily or weekly activities, about people I meet, about music, about football and many more things.
+              Ooh also, I'm a poet. I write poems, about reciting them? Not very sure. The voice is wanting... but let's see.
             </p>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
               <h4 class="title"><a href="">Poems</a></h4>
-              <p class="description">Here you give readers an overview of your poem writing i.e inspirations e.t.c.Also tell us when you will be dropping poems so readers can know.</p>
+              <p class="description">Most of my poems are about love,yes erotic love. But I don't limit myself to that. You could find any kind of poem here. Honestly, I can't say I have read so much poetry and I haven't indulged in it as I have in stories but I write them nonetheless.</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bi bi-card-checklist"></i></div>
               <h4 class="title"><a href="">Story</a></h4>
-              <p class="description">Here you give readers an overview of your story writing i.e inspirations e.t.c.Also tell us when you will be dropping stories so readers can know.</p>
+              <p class="description">Like I mentioned above, of poetry and stories, I love the latter and I do it with so much ease. I cannot claim to have read so many books but I'm learning while writing.</p>
             </div>
 
           </div>
@@ -89,7 +90,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h3 class="section-title">All Creations</h3>
-          <p class="section-description">Toggle stories or poems.</p>
+          <p class="section-description">Toggle stories, poems and my sports desk.</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -98,6 +99,7 @@
               <li data-filter="*" class="filter-active">Samples</li>
               <li><a class="nav-link scrollto" href="{% url 'story_list'%}">Stories</a></li>
               <li><a class="nav-link scrollto" href="{% url 'poem_list'%}">Poems</a></li>
+              <li style="margin-top:20px;"><a class="nav-link scrollto" href="{% url 'sports_view'%}">Sports desk</a></li>
             </ul>
           </div>
         </div>
@@ -106,11 +108,10 @@
           {% for story in stories%}
           
           <div class="col-lg-4 col-md-6 ">
-            <h4>{{story.title}}</h4>
+            <h4 style="padding-left:30%">{{story.title}}</h4>
             <img src="{{ story.cover_photo.url }}" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>{{story.title}}</h4>
-              <p>{{story.bio}}</p>
+              <p style="padding: 30px;">{{story.bio}}</p>
               <!-- <a href="{{ story.cover_photo.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" ><i class="bx bx-plus"></i></a>
               <a href="{% url 'story_detail' story_id=story.id%}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
             </div>
@@ -160,11 +161,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4">
-            <div class="social-links">
-              <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/lofty.mabonga/#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://wa.me/+254114176600" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+          <div class="col-lg-3 col-md-4" id="padding">
+            <div class="social-links" style="padding: 60px;">
+              <a style="padding: 20px;" href="https://www.facebook.com/profile.php?id=100072937072648&mibextid=ZbWKwL" class="facebook" ><i class="bi bi-facebook" style="font-size: 30px;"></i></a>
+              <a style="padding: 20px;" href="https://www.instagram.com/lofty.mabonga/#" class="instagram"><i class="bi bi-instagram" style="font-size: 30px;"></i></a>
+              <a style="padding: 20px;" href="https://wa.me/+254114176600" class="whatsapp"><i class="bi bi-whatsapp"style="font-size: 30px;"></i></a>
             </div>
           </div>
         </div>

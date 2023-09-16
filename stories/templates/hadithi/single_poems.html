@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Poems</title>
   <!-- Favicons -->
 
   <link href="{% static 'assets/img/cooltext.png' %}" rel="icon">
@@ -34,16 +34,25 @@
     <div id="logo">
         <a href="{% url 'home'%}"><img src="{% static 'assets/img/cooltext.png' %}" alt=""></a>
       </div>
-	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/pexels-photo-587409.jpeg">
+	<img src="{{poem.cover_photo.url}}">
 </header>
 <main role="main">
 	<div class="content">
 		<h1 style="margin-left:30%; font-family:Lo;">{{poem.title}}</h1>
-		 <p>{{poem.publication_date}}</p>
+    <hr>
+		<div class="row">
+      <div class="col-sm-4">
+        <p>{{poem.publication_date}}</p>
+       </div>
+      <div class="col-sm-4">
+      <img style="width:60px; height:60px;" class="rounded-circle shadow-4-strong" alt="avatar2" src="{% static 'assets/img/lopa.webp' %}"/>
+    </div>
+    </div>
 		<p class="drop-cap">{{poem.content|safe}}</p>
-        <p><span style="color:aqua"> by </span><strong>{{poem.author}}</strong></p>
+    <p><span style="color:darkgray"><strong>by </strong></span><strong style="font-style: italic;"> "{{poem.author}}"</strong></p>
 		<footer>
-<p style="font-weight:90%">Thanks for reading.Stay tuned!!</p>
+		<footer>
+<p style="font-weight:90%">Thanks for indulging.Stay tuned!!</p>
 </footer>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 	</div>
@@ -59,12 +68,6 @@
             &copy; Copyright <strong>Bmuchemi</strong>. All Rights Reserved
           </div>
           <div class="credits">
-            <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
-          -->
             Designed by <a href="">Bmuchemi</a>
           </div>
         </div>

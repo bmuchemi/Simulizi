@@ -43,11 +43,31 @@ INSTALLED_APPS = [
     'stories',
 ]
 
+# AWS_ACCESS_KEY_ID = 'AKIA3F2F2US46DHWD556'
+# AWS_SECRET_ACCESS_KEY = 'ms5/Fi7djz1rv4BY8/ptIz7JND6ThsMDpzcuVqhH'
+# AWS_STORAGE_BUCKET_NAME = 'simulizi'
+# AWS_S3_REGION_NAME = 'EU (London) eu-west-2'  # e.g., 'us-east-1'
+
+# # Set the AWS S3 custom domain if you have one
+# # AWS_S3_CUSTOM_DOMAIN = 'your-custom-domain.com'
+
+# # Set the AWS S3 endpoint if necessary
+# # AWS_S3_ENDPOINT_URL = 'https://your-custom-endpoint.com'
+
+# # Set the storage classes for static and media files
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# # Set the URL format for the static and media files
+# STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
+# MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'height': 300,
-        'width': 800,
+        'width': 800,   
     },
 }
 
@@ -134,8 +154,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# # Static files (CSS, JavaScript, Images)
+# # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

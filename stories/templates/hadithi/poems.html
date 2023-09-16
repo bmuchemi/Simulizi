@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Poems</title>
   <!-- Favicons -->
 
   <link href="{% static 'assets/img/cooltext.png' %}" rel="icon">
@@ -37,9 +37,10 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{% url 'home'%}">Home</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'about'%}">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about'%}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'sports_view' %}">Sports</a></li>
           <li><a class="nav-link scrollto" href="{% url 'story_list'%}">Stories</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'poem_list' %}">Poems</a></li>
           <li><a class="nav-link scrollto" href="{% url 'about' %}">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -59,11 +60,13 @@
       <div class="row">
         {% for poem in poems%}
         <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+          <a href="{% url 'poem_detail' poem_id=poem.id%}">
           <div class="box">
             <div class="icon"><a href="{% url 'poem_detail' poem_id=poem.id%}"><i class="bi bi-pen"></i></a></div>
             <h4 class="title"><a href="{% url 'poem_detail' poem_id=poem.id%}">{{poem.title}}</a></h4>
             <p class="description"><a href="{% url 'poem_detail' poem_id=poem.id%}" style="color: grey;">{{poem.bio}}</a></p>
           </div>
+        </a>
         </div>
            {% endfor%}
       </div>

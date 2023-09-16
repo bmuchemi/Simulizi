@@ -566,9 +566,10 @@ section {
 }
 
 #about .about-container .background {
-  min-height: 300px;
+   height: 500px;
+  width: 400px;
   background: url(../img/lopa.webp) center top no-repeat;
-  margin-bottom: 10px;
+  
 }
 
 #about .about-container .content {

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Story Time</title>
   <!-- Favicons -->
 
   <link href="{% static 'assets/img/cooltext.png' %}" rel="icon">
@@ -31,7 +31,7 @@
    .drop-cap::first-letter {
   float: left;
   padding-left: 50px;
-  font-size: 6em;
+  font-size: 5em;
   line-height: 0.8em;
   margin-right: 0.1em;
   font-weight: bolder;
@@ -46,12 +46,21 @@
 <main role="main">
 	<div class="content">
 		<h1 style="margin-left:30%; font-family:Lo;">{{story.title}}</h1>
-		 <p>{{story.publication_date}}</p>
-         <p></p>
-		<p class="drop-cap">{{story.first_letter}}{{story.content|safe}}</p>
-    <p><span style="color:aqua"> by </span><strong>{{story.author}}</strong></p>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <p>{{story.publication_date}}</p>
+       </div>
+      <div class="col-sm-4">
+      <img style="width:60px; height:60px;" class="rounded-circle shadow-4-strong" alt="avatar2" src="{% static 'assets/img/lopa.webp' %}"/>
+    </div>
+    </div>
+    <p></p>
+		<p class="drop-cap"> {{story.first_letter}} {{story.content|safe}}</p>
+    <hr>
+    <p><span style="color:darkgray"><strong>by </strong></span><strong style="font-style: italic;">"Lopanga"</strong></p>
 		<footer>
-<p style="font-weight:90%">Thanks for reading.Stay tuned!!</p>
+<p style="font-weight:90%">Thanks for indulging.Stay tuned!!</p>
 </footer>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 	</div>
